@@ -1,0 +1,9 @@
+a=25777
+b=25777
+print(id(a))
+print(id(b))
+a="qwerty"
+print(a[0])
+print(a[1])
+a="qwertyuiopasdfghjklzxcvbnm"
+print(a[len(a)//2])
