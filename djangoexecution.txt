@@ -1,0 +1,19 @@
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd django
+
+C:\Users\Vali Basha\Desktop\django>django-admin startproject myproject
+
+C:\Users\Vali Basha\Desktop\django>cd myproject
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+September 19, 2019 - 11:44:46
+Django version 2.0.1, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.

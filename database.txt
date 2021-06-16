@@ -1,0 +1,64 @@
+DATABASE RUNNING QUERIES---------------------------
+SQL--Sequence Query Language----
+#############29/08###############
+#Databases--it will be divided into 2 types..
+ #1)Sequel databases(Structured)--MYSQL,POSTGRES,SQLITE,ORACLE
+ #2)Non-Sequel databases(Non-Structured)-- Mongodb,GoogleAppEngine
+
+#Connecting to Databases:
+mysql -u root -p 
+
+#List all the Databases:
+
+show databases;
+
+#To create a database:-
+
+#create database databasename;
+create database python11am;
+
+
+#####################30/08##########
+#Creating a table in database..
+
+create table table_name(column1 varchar(20),column2 varchar(20),column3 varchar(20));
+
+use python11am;#to use database to store table..
+
+create table emp_details(emp_name varchar(20),emp_designation varchar(20),emp_city varchar(20));
+
+#List all the tables:
+
+show tables;
+
+to see what has inserted into the database:--
+desc emp_details;
+
+insert into table_name(column1,column2,column3)values(column1-value,column2-value,column3-value);
+
+insert into emp_details(emp_name,emp_designation,emp_city)values("Ramesh","Developer","Hyderabad");
+
+#######query for Getting Data:-
+select * from table_name;
+select * from emp_details;##edited in command print coomandline to add a row using *##
+
+#to see only column of database of specific..
+select emp_name from emp_details;
+
+#Updating the details:-
+
+update table_name set column_name=value where column-name=value;
+
+update emp_details set emp_designation="Manager" where emp_name="Ramesh";
+
+#Deleting--
+
+delete from emp_details where emp_name="Ramesh";
+
+select * from emp_details;#to see the data everytime in the database
+
+##to remove only data inside the table:--making table as empty se..
+truncate table emp_details;
+
+##to delete the table in the database:--
+drop table emp_details;

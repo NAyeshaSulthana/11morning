@@ -1,0 +1,136 @@
+#############################VISUAL STUDIO########################################
+take the terminal::
+"Run python File in Terminal"
+if any error of underlines::
+In the menu,-->view->command palette->python:select linter->Disable linting.
+for virtual environment::
+In the menu,-->view->command palette->python:select Interpreter->python 3.7.3 64-bit('env':venv)
+
+##################COMMAND PROMPT################################################################
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail
+$ "C:/Users/Vali Basha/AppData/Local/Programs/Python/Python37/python.exe" "c:/Users/Vali Basha/Desktop/sendmail/src/sendmail/sendmail/settings.py"
+
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail
+$ python -m venv env
+
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail
+$ env/Scripts/activate
+
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail
+$ cd src
+
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail/src
+$ cd sendmail
+"""""""""""""virtual error"""""""""""""""""""""""""""""""''''
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail/src/sendmail
+$ python manage.py runserver 9000
+Traceback (most recent call last):
+  File "manage.py", line 8, in <module>
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 14, in <module>
+    ) from exc
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
+""""""""""""""""""""""""""""""""""""""""install django""""""""""""
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail/src/sendmail
+$ pip install django
+Collecting django
+  Using cached https://files.pythonhosted.org/packages/b2/79/df0ffea7bf1e02c073c2633702c90f4384645c40a1dd09a308e02ef0c817/Django-2.2.6-py3-none-any.whl
+Requirement already satisfied: pytz in c:\users\vali basha\anaconda3\lib\site-packages (from django) (2019.1)
+Collecting sqlparse (from django)
+  Using cached https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Installing collected packages: sqlparse, django
+Successfully installed django-2.2.6 sqlparse-0.3.0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""''
+Vali Basha@LAPTOP-LNR1A4U1 MINGW64 ~/Desktop/sendmail/src/sendmail
+$ python manage.py runserver 9000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 3 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth.
+Run 'python manage.py migrate' to apply them.
+October 13, 2019 - 21:23:28
+Django version 2.2.6, using settings 'sendmail.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CTRL-BREAK.
+
+####################################################################################################
+THE LINK ---LOCALHOST----GIVES US THE LINK OF SEND MAIL&RESPONSE AFTER SENDING MAIL AS SUCCESSFULLY SENT...
+################################################################################################
+
+##################SAME IN COMMAND PROMPT###################################
+Microsoft Windows [Version 10.0.17763.805]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd sendmail
+
+C:\Users\Vali Basha\Desktop\sendmail>cd src
+
+C:\Users\Vali Basha\Desktop\sendmail\src>cd sendmail
+
+C:\Users\Vali Basha\Desktop\sendmail\src\sendmail>python manage.py makemigrations
+No changes detected
+
+C:\Users\Vali Basha\Desktop\sendmail\src\sendmail>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+C:\Users\Vali Basha\Desktop\sendmail\src\sendmail>python manage.py runserver 9000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 13, 2019 - 21:05:05
+Django version 2.0.1, using settings 'sendmail.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CTRL-BREAK.
+[13/Oct/2019 21:05:29] "GET / HTTP/1.1" 200 246
+Not Found: /favicon.ico
+[13/Oct/2019 21:05:30] "GET /favicon.ico HTTP/1.1" 404 2212
+[13/Oct/2019 21:05:42] "GET /sendmail HTTP/1.1" 200 22
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 13, 2019 - 21:10:15
+Django version 2.0.1, using settings 'sendmail.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 13, 2019 - 21:19:14
+Django version 2.0.1, using settings 'sendmail.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CTRL-BREAK.
+[13/Oct/2019 21:23:56] "GET / HTTP/1.1" 200 246
+[13/Oct/2019 21:24:06] "GET /sendmail HTTP/1.1" 200 22
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 13, 2019 - 22:52:41
+Django version 2.0.1, using settings 'sendmail.settings'
+Starting development server at http://127.0.0.1:9000/
+Quit the server with CTRL-BREAK.

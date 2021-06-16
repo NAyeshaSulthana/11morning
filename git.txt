@@ -1,0 +1,243 @@
+git -- it version controller..
+#git hub is for coding purpose
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+the code  data is pushed as everything
+
+we have two types of users...
+#1-public-anyone can access the repository
+#2-private-the member who have permission can access the repository
+
+"""
+the code updated is pushed automatically in the github
+whatever ever the code  and changes making by us is managed in the repository is called github...
+the git server and our server takes action of updation..
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+There are two types of repositories..
+#Local repository--Local System repository(our system)..
+#Server repository--git hub repository...
+
+#go to which folder you want to convert it as git repository using command prompt
+--->checking git presence:git --version
+
+-->git init--#Initialization of git into the folder.
+#results as:Initialized empty Git repository in C:/Users/Vali Basha/Desktop/11morning/.git/
+
+-->git status--#is a command that pushing files into the git..
+
+git add filename
+
+git commit -m "Message you want to show"
+
+git remote add origin https://github.com/ayeshasulthana000/python11am.git
+
+git push origin master
+
+git pull origin master
+
+##########################################################################
+                           COMMAND PROMPT
+#############################################################################
+Microsoft Windows [Version 10.0.17763.678]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Vali Basha>git --version
+git version 2.23.0.windows.1
+
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd 11morning
+
+C:\Users\Vali Basha\Desktop\11morning>git init
+Initialized empty Git repository in C:/Users/Vali Basha/Desktop/11morning/.git/
+
+C:\Users\Vali Basha\Desktop\11morning>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        __pycache__/
+        abc.py
+        conditionalstatements.py
+        controlflowstatements.py
+        database.txt
+        databases.py
+        day1.py
+        day2.py
+        day4.py
+        day44.py
+        dictionaries.py
+        fileoperations.py
+        fuctions.py
+        functions.py
+        git.txt
+        inbuiltmodules.py
+        lists.py
+        loopings.py
+        module1.py
+        module2.py
+        module3.py
+        modules.py
+        oops.py
+        oopsmethods.py
+        operators.py
+        sample.csv
+        sample.txt
+        sample1.csv
+        sample1.txt
+        sets.py
+        stringformatting.py
+        strings.py
+        tuples.py
+        xyz.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Vali Basha\Desktop\11morning>cd git add tuples.py
+The system cannot find the path specified.
+
+C:\Users\Vali Basha\Desktop\11morning>git add tuples.py
+
+C:\Users\Vali Basha\Desktop\11morning>git add xyz.py
+
+C:\Users\Vali Basha\Desktop\11morning>git strings.py
+git: 'strings.py' is not a git command. See 'git --help'.
+
+C:\Users\Vali Basha\Desktop\11morning>git add strings.py
+
+C:\Users\Vali Basha\Desktop\11morning>git add stringformatting.py
+
+C:\Users\Vali Basha\Desktop\11morning>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   stringformatting.py
+        new file:   strings.py
+        new file:   tuples.py
+        new file:   xyz.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        __pycache__/
+        abc.py
+        conditionalstatements.py
+        controlflowstatements.py
+        database.txt
+        databases.py
+        day1.py
+        day2.py
+        day4.py
+        day44.py
+        dictionaries.py
+        fileoperations.py
+        fuctions.py
+        functions.py
+        git.txt
+        inbuiltmodules.py
+        lists.py
+        loopings.py
+        module1.py
+        module2.py
+        module3.py
+        modules.py
+        oops.py
+        oopsmethods.py
+        operators.py
+        sample.csv
+        sample.txt
+        sample1.csv
+        sample1.txt
+        sets.py
+
+
+C:\Users\Vali Basha\Desktop\11morning>git commit -m "first three files are added"
+[master (root-commit) b61c673] first three files are added
+ 4 files changed, 272 insertions(+)
+ create mode 100644 stringformatting.py
+ create mode 100644 strings.py
+ create mode 100644 tuples.py
+ create mode 100644 xyz.py
+
+C:\Users\Vali Basha\Desktop\11morning>git remote add origin https://github.com/NAyeshaSulthana/11morning.git
+
+C:\Users\Vali Basha\Desktop\11morning>git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 3.26 KiB | 1.09 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/NAyeshaSulthana/11morning.git
+ * [new branch]      master -> master
+
+C:\Users\Vali Basha\Desktop\11morning>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stringformatting.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        __pycache__/
+        abc.py
+        conditionalstatements.py
+        controlflowstatements.py
+        database.txt
+        databases.py
+        day1.py
+        day2.py
+        day4.py
+        day44.py
+        dictionaries.py
+        fileoperations.py
+        fuctions.py
+        functions.py
+        git.txt
+        inbuiltmodules.py
+        lists.py
+        loopings.py
+        module1.py
+        module2.py
+        module3.py
+        modules.py
+        oops.py
+        oopsmethods.py
+        operators.py
+        sample.csv
+        sample.txt
+        sample1.csv
+        sample1.txt
+        sets.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Vali Basha\Desktop\11morning>git add stringformatting.py
+
+C:\Users\Vali Basha\Desktop\11morning>git commit -m "Modified StringFormatting file"
+[master fb9678d] Modified StringFormatting file
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Vali Basha\Desktop\11morning>git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 166.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/NAyeshaSulthana/11morning.git
+   b61c673..fb9678d  master -> master
+
+C:\Users\Vali Basha\Desktop\11morning>git pull origin master
+From https://github.com/NAyeshaSulthana/11morning
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+

@@ -1,0 +1,6 @@
+This is the second file operationdjango is the framework for pythonThis is the first file operation command.
+Python is a most used language in Datascience.
+Django is a framework in pythonThis is the second file operation
+This is the first file operation command.
+Python is a most used language in Datascience.
+Django is a framework in python

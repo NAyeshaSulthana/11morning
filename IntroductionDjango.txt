@@ -1,0 +1,520 @@
+##############19/09--thursday#########################
+Django---it is web development framework for python
+
+#History--
+ # holovaty and willianson--2003
+ #Django(0.1)--july 2005
+ #django-- Reihrient Django
+
+#features--
+ # open source
+ # default authorisation
+ # admin interface
+ # Default Development Server
+ # DRY(Don't Repeat Yourself)
+ # Multilanguages
+ # Default folder structure
+ # Django supports all the databases(Default database is SQLite)
+
+#Installation--
+  # install python
+  # install Django:pip install django==2.0.1
+
+# Project and App    
+
+ #App -- functionalities
+ #Project -- combination of functionalities
+
+##create a new folder and then create project
+####creating a project using :django-admin startproject myproject
+
+##go to particular location with inter created folder and then run the command
+###checking whether project is running:python manage.py runserver
+###migrating :python manage.py migrate
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd django
+
+C:\Users\Vali Basha\Desktop\django>django-admin startproject myproject
+
+C:\Users\Vali Basha\Desktop\django>python manage.py runserver
+python: can't open file 'manage.py': [Errno 2] No such file or directory
+
+C:\Users\Vali Basha\Desktop\django>cd myproject
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+September 24, 2019 - 18:03:51
+Django version 2.0.1, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[24/Sep/2019 18:05:44] "GET / HTTP/1.1" 200 16559
+[24/Sep/2019 18:05:44] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[24/Sep/2019 18:05:44] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[24/Sep/2019 18:05:44] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[24/Sep/2019 18:05:44] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[24/Sep/2019 18:05:44] "GET /favicon.ico HTTP/1.1" 404 1975
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  C:\Users\Vali Basha\Desktop\django\myproject>python manage.py startapp myapp
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""''''''''''''''''''''''
+#############class-2####20/09################################################################
+DATABASE CREATING SUPERCLASS :
+COMMAND PROMPT:""""""""""""""""""""""""""""
+C:\Users\Vali Basha>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.6-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> shw databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'shw databases' at line 1
+MariaDB [(none)]> create database myapp930;
+1 row in set.
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| myapp930           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| python10am         |
+| test               |
++--------------------+
+7 rows in set (1.033 sec)
+
+MariaDB [(none)]> use myapp930;
+Database changed
+MariaDB [myapp930]> show tables;
+Empty set (0.000 sec)
+
+MariaDB [myapp930]> show tables;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    11
+Current database: myapp930
+
++----------------------------+
+| Tables_in_myapp930         |
++----------------------------+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
++----------------------------+
+10 rows in set (0.110 sec)
+
+MariaDB [myapp930]> select *from auth_user;
+Empty set (0.118 sec)
+
+MariaDB [myapp930]> select *from auth_user;
++----+--------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-------------------+----------+-----------+----------------------------+
+| id | password                                                                       | last_login | is_superuser | username | first_name | last_name | email             | is_staff | is_active | date_joined                |
++----+--------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-------------------+----------+-----------+----------------------------+
+|  1 | pbkdf2_sha256$100000$z8r2iTZUpHGV$Sdm4y4Gomx76ZJ+eoUloCsWXd2h/0pFwtks7xN1eg50= | NULL       |            1 | ayesha6  |            |           | ayesha6@gmail.com |        1 |         1 | 2019-09-26 06:14:28.196840 |
++----+--------------------------------------------------------------------------------+------------+--------------+----------+------------+-----------+-------------------+----------+-----------+----------------------------+
+1 row in set (0.000 sec)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+##########################################################################################################
+###########class-3####23/09#Monday##########################################################################
+Whenever we have concept of creating html files under myapp..
+All the html files are kept under separate folder called Templates...
+so create Templates and then create html pages..
+
+default argument to pass is request..either classes or objects..
+default argument to render is request..
+
+Without registering app name in installed name,the functionalities are not worked and considered-settings
+
+Model--model is nothing but databases.
+All the models has to be python classes..
+the functionality to convert a model is:models.Model(converts the written model into django)
+the type has to be declared ex:(name=models.Charfield(max_length=25)..//)
+2147   --last charfield
+
+python manage.py makemigrations is syntax to create in cmd..on migration:-Create model Register..
+python manage.py sqlmigrate myapp 0001:this isthe syntax for creating table
+but in the table format of database,the table&details are not created..to do it..
+to migrate of tables:python manage.py migrate in cmd of server
+tables and details are updated..
+
+admin:::
+from models,an admin page has to be registered..
+in the django administration,we can add new register details...
+like that we can add any no.of new add registers of particular details..
+to give particular name,we have initiate it under models:
+def__str__(self):
+return self.name
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+C:\Users\Vali Basha>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 30
+Server version: 10.4.6-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| myapp930           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| python10am         |
+| test               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [(none)]> use myapp930;
+Database changed
+
+MariaDB [myapp930]> show tables;
++----------------------------+
+| Tables_in_myapp930         |
++----------------------------+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| myapp_register             |
++----------------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [myapp930]> desc myapp_register;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(25) | NO   |     | NULL    |                |
+| email  | varchar(25) | NO   |     | NULL    |                |
+| mobile | varchar(10) | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.004 sec)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Microsoft Windows [Version 10.0.17763.737]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd django
+
+C:\Users\Vali Basha\Desktop\django>cd myproject
+
+C:\Users\Vali Basha\Desktop\django\myproject>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 22E5-257F
+
+ Directory of C:\Users\Vali Basha\Desktop\django\myproject
+
+09/24/2019  06:33 PM    <DIR>          .
+09/24/2019  06:33 PM    <DIR>          ..
+09/24/2019  06:23 PM           131,072 db.sqlite3
+09/24/2019  05:56 PM               556 manage.py
+09/25/2019  11:19 AM    <DIR>          myapp
+09/24/2019  06:03 PM    <DIR>          myproject
+               2 File(s)        131,628 bytes
+               4 Dir(s)  445,583,630,336 bytes free
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 26, 2019 - 15:24:10
+Django version 2.0.1, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py makemigrations
+Migrations for 'myapp':
+  myapp\migrations\0001_initial.py
+    - Create model Register
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py sqlmigrate myapp 0001
+BEGIN;
+--
+-- Create model Register
+--
+CREATE TABLE `myapp_register` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(25) NOT NULL, `email` varchar(25) NOT NULL, `mobile` varchar(10) NOT NULL);
+COMMIT;
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+        HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/2.0/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, myapp, sessions
+Running migrations:
+  Applying myapp.0003_auto_20190926_1628... OK
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 26, 2019 - 16:57:11
+Django version 2.0.1, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[26/Sep/2019 16:57:14] "GET /admin/myapp/register/ HTTP/1.1" 200 4618
+[26/Sep/2019 16:57:14] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[26/Sep/2019 16:58:50] "GET /admin/myapp/register/1/change/ HTTP/1.1" 200 5282
+[26/Sep/2019 16:58:50] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py shell
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from myapp.models import Register
+>>> Register.objects.all()
+<QuerySet [<Register: sulthana6>, <Register: aysh6>]>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+######################################class-4#24/9-tuesday##################################################
+ORS:::
+
+python manage.py shell
+from myapp.models import Register
+Register.objects.all()
+assigning:data=Register.objects.all()
+calling the functions:
+for j in data:
+print(j.name,j.email,j.city)
+calling single details:
+Register.objects.get(id=1)
+with name:
+Register.objects.get(name='anu')
+Creating new details:
+Register.objects.create()
+get is for getting unique person details..
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""COMMAND PROMPT-24/9/TUESDAY""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Microsoft Windows [Version 10.0.17763.737]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd django
+
+C:\Users\Vali Basha\Desktop\django>cd myproject
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py makemigrations
+Migrations for 'myapp':
+  myapp\migrations\0001_initial.py
+    - Create model Register
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py sqlmigrate myapp 0001
+BEGIN;
+--
+-- Create model Register
+--
+CREATE TABLE `myapp_register` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(25) NOT NULL, `email` varchar(25) NOT NULL, `mobile` varchar(10) NOT NULL);
+COMMIT;
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+        HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/2.0/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, myapp, sessions
+Running migrations:
+  No migrations to apply.
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 28, 2019 - 14:24:07
+Django version 2.0.1, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[28/Sep/2019 14:24:32] "GET /admin/ HTTP/1.1" 200 4266
+[28/Sep/2019 14:24:35] "GET /admin/myapp/register/ HTTP/1.1" 200 5064
+[28/Sep/2019 14:24:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[28/Sep/2019 14:24:39] "GET /admin/ HTTP/1.1" 200 4266
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py shell
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from myapp.models import Register
+>>> Register.objects.all()
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>]>
+>>> data=Register.objects.all()
+>>> for j in data:
+...     print(j.name,j.email,j.mobile)
+...
+sulthana6 sulthana6@gmail.com 8234567888
+aysh6 aysha6@gmail.com 7234567890
+aryna aryna@gmail.com 9987654321
+sulthana6 sulthana6@gmail.com 9876543210
+>>> Register.objects.get(id=1)
+<Register: sulthana6>
+>>> Register.objects.get(name='aryna')
+<Register: aryna>
+>>> Register.objects.create(name="jas",email="jas@gmail.com",mobile="9876543901")
+<Register: jas>
+>>> data=Register.objects.all()
+>>> data
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>]>
+>>> Register.objects.get(id=1)
+<Register: sulthana6>
+>>> Register.objects.get(id=4)
+<Register: sulthana6>
+>>> Register.objects.get(name="sulthana6")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Vali Basha\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Vali Basha\AppData\Local\Programs\Python\Python37\lib\site-packages\django\db\models\query.py", line 407, in get
+    (self.model._meta.object_name, num)
+myapp.models.MultipleObjectsReturned: get() returned more than one Register -- it returned 2!
+>>> data=Register(name="Naresh",email="naresh@gmail.com",mobile="6789012345")
+>>> data
+<Register: Naresh>
+>>> data=Register.objects.all()
+>>> data
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>]>
+>>> data1=Register(name="Naresh",email="naresh@gmail.com",mobile="6789012345")
+>>> data1.save()
+>>> data=Register.objects.all()
+>>> data
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>, <Register: Naresh>]>
+>>> Register.objects.create(name="ramesh",email="ramesh@gmail.com",mobile="7890123456")
+<Register: ramesh>
+>>> Register.objects.create(name="nagesh",email="nagesh@gmail.com",mobile="7980123456")
+<Register: nagesh>
+>>> Register.objects.all()
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>, <Register: Naresh>, <Register: ramesh>, <Register: nagesh>]>
+>>> Register.objects.create(name="Nagesh",email="nagesh@gmail.com",mobile="7980123456")
+<Register: Nagesh>
+>>> Register.objects.all()
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>, <Register: Naresh>, <Register: ramesh>, <Register: nagesh>, <Register: Nagesh>]>
+>>> Register.objects.filter(name="Nagesh")
+<QuerySet [<Register: nagesh>, <Register: Nagesh>]>
+>>> Register.objects.filter(name__startswith="Nagesh")
+<QuerySet [<Register: Nagesh>]>
+>>> Register.objects.filter(name__startswith="Nag")
+<QuerySet [<Register: Nagesh>]>
+>>> Register.objects.filter(name__startswith="nag")
+<QuerySet [<Register: nagesh>]>
+>>> Register.objects.filter(name__istartswith="nag")
+<QuerySet [<Register: nagesh>, <Register: Nagesh>]>
+>>> Register.objects.filter(mobile__startswith="9")
+<QuerySet [<Register: aryna>, <Register: sulthana6>, <Register: jas>]>
+>>> Register.objects.filter(mobile__endswith="9")
+<QuerySet []>
+>>> Register.objects.all()
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>, <Register: Naresh>, <Register: ramesh>, <Register: nagesh>, <Register: Nagesh>]>
+>>> Register.objects.all()[0:3]
+<QuerySet [<Register: sulthana6>, <Register: aysh6>, <Register: aryna>]>
+>>> Register.objects.filter(mobile__startswith="9")
+<QuerySet [<Register: aryna>, <Register: sulthana6>, <Register: jas>]>
+>>> Register.objects.filter(mobile__startswith="9").filter(name__startswith='ar')
+<QuerySet [<Register: aryna>]>
+>>> Register.objects.filter(mobile__startswith="9",name__startswith='ar')
+<QuerySet [<Register: aryna>]>
+>>> data2=Register.objects.get(id=1)
+#######
+>>>data2.name="Zameer123"
+>>>data2.email="Zameer123@gmail.com"
+>>>data2.save()
+>>>data2=Register.objects.get(id=1)
+>>>data2.name
+'Ramesh123'
+>>>data2=Register.objects.get(id=1)
+>>>data2
+<Register:Zameer123>
+ #####################-----------GIVES AN INSTANCE FORMAT WHERE WE WANT QUERY SET.##############
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+################################25/09--wednesday#######################################################
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""COMMAND PROMPT SHELL""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Microsoft Windows [Version 10.0.17763.737]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\Vali Basha>cd desktop
+
+C:\Users\Vali Basha\Desktop>cd django
+
+C:\Users\Vali Basha\Desktop\django>cd myproject
+
+C:\Users\Vali Basha\Desktop\django\myproject>python manage.py shell
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from myapp.models import Register
+>>> Register.objects.all()
+<QuerySet [<Register: Zameer123>, <Register: aysh6>, <Register: aryna>, <Register: sulthana6>, <Register: jas>, <Register: Naresh>, <Register: ramesh>, <Register: nagesh>, <Register: Nagesh>]>
+>>> data=Register.objects.filter(id=1)
+>>> data.update(name="Nagaraju",email="nagaraju123@gmail.com",mobile="9876543210")
+1
+>>> data=Register.objects.get(id=1)
+>>> data.name
+'Nagaraju'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+
+
+
+
+
+
